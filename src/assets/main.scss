@@ -1,0 +1,23 @@
+@import './reset.scss';
+@import './var.scss';
+@import './mixins.scss';
+@import './fonts/fonts.scss';
+
+@import './components/Button.scss';
+
+* {
+  font-family: 'SF Mono', 'Source Han Sans SC', '微软雅黑';
+}
+
+body {
+  margin: 0;
+  color: #303133;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  *+* {
+    margin-left: 16px;
+  }
+}

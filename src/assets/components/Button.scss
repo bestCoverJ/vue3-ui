@@ -1,0 +1,152 @@
+@import '../var.scss';
+
+.v-button {
+  display: flex;
+  align-items: center;
+  $type: ('normal', 'primary', 'success', 'info', 'warning', 'danger');
+  @function getBackColor ($t) {
+    @if $t == 'normal' {
+      @return $normal-color
+    }
+    @else if $t == 'primary' {
+      @return $primary-color
+    }
+    @else if $t == 'success' {
+      @return $success-color
+    }
+    @else if $t == 'info' {
+      @return $info-color
+    }
+    @else if $t == 'danger' {
+      @return $danger-color
+    }
+    @else if $t == 'warning' {
+      @return $warning-color
+    }
+    @return $normal-color
+  }
+
+  @function getTextColor ($t) {
+    @if $t == 'normal' {
+      @return $text-color
+    }
+    
+    @return $normal-color
+  }
+
+  @function getBorderColor ($t) {
+    @if $t == 'normal' {
+      @return $border-color
+    }
+    
+    @return getBackColor($t)
+  }
+
+  @each $t in $type {
+    &.v-button-#{$t} {
+      padding: 8px 16px;
+      border-radius: $border-radius;
+      cursor: pointer;
+      color: getTextColor($t);
+      border: 1px solid getBorderColor($t);
+      background-color: getBackColor($t);
+      transition: background-color .15s, color .15s;
+      &:hover {
+        @if $t == 'normal' {
+          color: $primary-color;
+          border: 1px solid $border-color;
+          background-color: $primary-light-color;
+        }
+        @else {
+          border: 1px solid lighten(getBorderColor($t), 10%);
+          background-color: lighten(getBackColor($t), 10%);
+        }
+      }
+      &:active {
+        @if $t == 'normal' {
+          color: $primary-color;
+          border: 1px solid darken($primary-color, 10%);
+          background-color: $primary-light-color;
+        }
+        @else {
+          border: 1px solid darken(getBorderColor($t), 10%);
+          background-color: darken(getBackColor($t), 10%);
+        }
+      }
+      &.v-button-disabled {
+        cursor: not-allowed;
+        @if $t == 'normal' {
+          color: $primary-color;
+          border: 1px solid $border-color;
+          background-color: $primary-light-color;
+        }
+        @else {
+          border: 1px solid lighten(getBorderColor($t), 10%);
+          background-color: lighten(getBackColor($t), 10%);
+        }
+        &:hover, &:active {
+          @if $t == 'normal' {
+            color: $primary-color;
+            border: 1px solid $border-color;
+            background-color: $primary-light-color;
+          }
+          @else {
+            border: 1px solid lighten(getBorderColor($t), 10%);
+            background-color: lighten(getBackColor($t), 10%);
+          }
+        }
+      }
+      &.v-button-loading {
+        cursor: not-allowed;
+        @if $t == 'normal' {
+          color: $primary-color;
+          border: 1px solid $border-color;
+          background-color: $primary-light-color;
+        }
+        @else {
+          border: 1px solid lighten(getBorderColor($t), 10%);
+          background-color: lighten(getBackColor($t), 10%);
+        }
+        &:hover, &:active {
+          @if $t == 'normal' {
+            color: $primary-color;
+            border: 1px solid $border-color;
+            background-color: $primary-light-color;
+          }
+          @else {
+            border: 1px solid lighten(getBorderColor($t), 10%);
+            background-color: lighten(getBackColor($t), 10%);
+          }
+        }
+      }
+    }
+    &.v-button-text-#{$t} {
+      cursor: pointer;
+      @if $t == 'normal' {
+        color: getTextColor($t);
+      }
+      @else {
+        color: getBackColor($t);
+      }
+      border: none;
+      background-color: $normal-color;
+      &:hover {
+        @if $t == 'normal' {
+          color: $primary-color;
+        }
+        @else {
+          color: lighten(getBackColor($t), 10%);
+        }
+      }
+      &:active {
+        @if $t == 'normal' {
+          color: darken($primary-color, 10%);
+        }
+        @else {
+          color: darken(getBackColor($t), 10%);
+        }
+      }
+    }
+  }
+  
+}
