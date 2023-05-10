@@ -40,6 +40,7 @@ const menuList = ref([
   position: sticky;
   top: 0;
   backdrop-filter: blur(20px);
+  z-index: 1000;
   .nav-wapper {
     max-width: 1280px;
     margin: 0 auto;
