@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import 'highlight.js/styles/atom-one-light.css'
-import 'highlight.js/lib/common'
+import 'highlight.js'
 import hljsVuePlugin from '@highlightjs/vue-plugin'
 
 import '@/assets/main.scss'

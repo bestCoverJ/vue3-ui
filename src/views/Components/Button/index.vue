@@ -15,7 +15,7 @@
       <vButton type="danger">危险按钮</vButton>
     </div>
     <div>
-      <highlightjs language="HTML" :autodetect="true" :code="code1" />
+      <highlightjs :autodetect="true" :code="code1" />
     </div>
     <!--  -->
     <h3>禁用状态</h3>
@@ -30,7 +30,7 @@
       <vButton type="danger" disabled>危险按钮</vButton>
     </div>
     <div>
-      <highlightjs language="HTML" :autodetect="true" :code="code2" />
+      <highlightjs :autodetect="true" :code="code2" />
     </div>
     <!--  -->
     <h3>加载状态</h3>
@@ -59,7 +59,7 @@
       </vButton>
     </div>
     <div>
-      <highlightjs language="HTML" :autodetect="true" :code="code3" />
+      <highlightjs :autodetect="true" :code="code3" />
     </div>
     <!--  -->
     <h3>文字按钮</h3>
@@ -74,7 +74,7 @@
       <vButton type="danger" text>危险按钮</vButton>
     </div>
     <div>
-      <highlightjs language="HTML" :autodetect="true" :code="code4" />
+      <highlightjs :autodetect="true" :code="code4" />
     </div>
   </div>
 </template>
