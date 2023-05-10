@@ -3,14 +3,11 @@
     :class="buttonClass"
     :disabled="props.disabled"
   >
-    <slot name="loading">
-      <Spinner v-if="props.loading" 
-        line-fg-color="#409EFF"
-        line-bg-color="#ecf5ff"
-        line-size="2"
-        size="14" 
-      />
-    </slot>
+    <span v-if="props.loading" class="v-button-loading-icon">
+      <slot name="loading">
+        <IconLoadingLine class="icon-loading" />
+      </slot>
+    </span>
     <span>
       <slot></slot>
     </span>
@@ -19,7 +16,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import Spinner from 'vue-simple-spinner/src'
+import IconLoadingLine from '@/components/icons/IconLoadingLine.vue'
 
 export interface vBotton {
   type: string,

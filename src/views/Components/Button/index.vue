@@ -38,12 +38,24 @@
     <p>指定<Border>loading</Border>即可设置为加载状态，也可以使用一个图标占位。</p>
     <Tips>如果你添加了loading内容，那么默认的加载效果将不起作用。</Tips>
     <div class="flex">
-      <vButton type="normal" loading>加载中</vButton>
+      <vButton type="normal" loading>默认加载</vButton>
+      <vButton type="normal" loading>
+        <template v-slot:loading>
+          <IconLoadingLine2 class="icon-loading" />
+        </template>
+        换个图标
+      </vButton>
       <vButton type="normal" loading>
         <template v-slot:loading>
           <IconLoading class="icon-loading" />
         </template>
-        加载数据
+        这个风格也不错
+      </vButton>
+      <vButton type="normal" loading>
+        <template v-slot:loading>
+          <IconLollipop class="icon-loading" />
+        </template>
+        等这个棒棒糖
       </vButton>
     </div>
     <div>
@@ -72,6 +84,8 @@ import vButton from './vButton.vue'
 import Border from '@/components/Border.vue'
 import Tips from '@/components/Tips.vue'
 import IconLoading from '@/components/icons/IconLoading.vue'
+import IconLoadingLine2 from '@/components/icons/IconLoadingLine2.vue'
+import IconLollipop from '@/components/icons/IconLollipop.vue'
 const code1 = `<vButton type="normal">默认按钮</vButton>
 <vButton type="primary">主要按钮</vButton>
 <vButton type="success">成功按钮</vButton>
@@ -86,12 +100,24 @@ const code2 = `<vButton type="normal" disabled>默认按钮</vButton>
 <vButton type="warning" disabled>警告按钮</vButton>
 <vButton type="danger" disabled>危险按钮</vButton>
 `
-const code3 = `<vButton type="normal" loading>加载中</vButton>
+const code3 = `<vButton type="normal" loading>默认加载</vButton>
 <vButton type="normal" loading>
   <template v-slot:loading>
-    <IconLoading class="icon-loading" />
+    <IconLoadingLine2 />
   </template>
-  加载数据
+  换个图标
+</vButton>
+<vButton type="normal" loading>
+  <template v-slot:loading>
+    <IconLoading />
+  </template>
+  这个风格也不错
+</vButton>
+<vButton type="normal" loading>
+  <template v-slot:loading>
+    <IconLollipop />
+  </template>
+  等这个棒棒糖
 </vButton>
 `
 const code4 = `<vButton type="normal" text>默认按钮</vButton>

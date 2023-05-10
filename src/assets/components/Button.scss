@@ -148,5 +148,24 @@
       }
     }
   }
-  
+
+  @keyframes IconRotation {
+    from {
+      transform: rotate(0);
+    }
+    
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .v-button-loading-icon {
+    display: flex;
+    animation: IconRotation 1s linear infinite;
+    .v-button-loading-icon-content {
+      height: 14px;
+      width: 14px;
+      background: $primary-color;
+      border-radius: 100% 0 0 0;
+    }
+  }
 }
