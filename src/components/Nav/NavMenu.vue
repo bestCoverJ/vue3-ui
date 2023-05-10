@@ -12,17 +12,21 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-
+import { useRouter } from 'vue-router'
 export interface NavMenu {
   label: string,
-  value: string | number
+  value: string
 }
 const props = defineProps<{
   menus: Array<NavMenu>
 }>()
-const activedId = ref<string | number>(props.menus[0].value)
+const activedId = ref<string>(props.menus[0].value)
+const router = useRouter()
 const clickNavMenu = (item: NavMenu) => {
   activedId.value = item.value
+  router.push({
+    name: item.value
+  })
 }
 </script>
 

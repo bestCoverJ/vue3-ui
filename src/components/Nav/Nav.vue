@@ -20,15 +20,15 @@ import { ref } from 'vue';
 const menuList = ref([
   {
     label: '首页',
-    value: 0
+    value: 'Index'
   },
   {
     label: '文档',
-    value: 1
+    value: 'Document'
   },
   {
     label: '组件',
-    value: 2
+    value: 'Components'
   }
 ])
 </script>

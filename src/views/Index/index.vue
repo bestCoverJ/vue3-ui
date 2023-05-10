@@ -1,10 +1,11 @@
 <template>
   <div class="index-page">
-    123
+    <Banner />
   </div>
 </template>
 
 <script setup lang="ts">
+import Banner from './components/banner.vue'
 </script>
 
 <style lang="scss">
