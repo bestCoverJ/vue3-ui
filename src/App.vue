@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Nav from '@/components/Nav/Nav.vue'
-import Footer from '@/components/Footer/footer.vue'
+import Footer from '@/components/Footer/Footer.vue'
 </script>
 
 <style lang="scss">
