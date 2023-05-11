@@ -33,6 +33,7 @@ const asideList = ref<Array<Aside>>([
 
 <style lang="scss">
 .index-aside {
+  z-index: 1;
   h2, p {
     margin-bottom: 8px;
     margin-top: 8px;
